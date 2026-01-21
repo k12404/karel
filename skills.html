@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Kharylle Cabalida</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/skills-style.css">
+
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="bg-blobs">
+    <div class="blob s1"></div>
+    <div class="blob s2"></div>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo" onclick="window.location.href='portfolio.html';" style="cursor: pointer;">
+    KAREL<span>.</span>
+    </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="skills-page-container">
+    <div class="skills-header reveal">
+      <h1 class="gradient-text">Technical Expertise</h1>
+      <p>A breakdown of my proficiency in development and design tools.</p>
+    </div>
+
+    <div class="skills-section-grid">
+      <div class="skill-category reveal">
+        <h2>Development</h2>
+        
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="95%"></div></div>
+        </div>
+
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="80%"></div></div>
+        </div>
+
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>React & Next.js</span><span>50%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="50%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <h2>Creative Design</h2>
+        
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>Canva Branding</span><span>90%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="90%"></div></div>
+        </div>
+
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>UI/UX (Figma)</span><span>70%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="70%"></div></div>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-info"><span>WordPress (CMS)</span><span>35%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-percent="35%"></div></div>
+        </div>
+      </div>
+    </div>
+
+        <div class="learning-path reveal">
+        <h2 style="text-align: center; margin-top: 80px;">Software Toolbox</h2>
+        <div class="tools-grid">
+            <div class="tool-card">🚀 <span>VS Code</span></div>
+            <div class="tool-card">🎨 <span>Figma</span></div>
+            <div class="tool-card">WP <span>WordPress</span></div> <div class="tool-card">🛠 <span>Git/GitHub</span></div>
+            <div class="tool-card">✨ <span>Canva</span></div>
+            <div class="tool-card">🔥 <span>Firebase</span></div>
+        </div>
+    </div>
+  </main>
+
+ <footer class="main-footer reveal">
+ <div class="footer-content">
+    <div class="footer-logo">KAREL<span>.</span></div>
+    <p>Let's build something amazing together.</p>
+    
+   <div class="social-links">
+  <a href="https://www.facebook.com/khai.jane" target="_blank" class="social-icon">FB</a> 
+  
+  <a href="https://www.instagram.com/ryll_khv" target="_blank" class="social-icon">IG</a> 
+  
+  <a href="https://m.me/khai.jane" target="_blank" class="social-icon">MS</a> 
+  
+  <a href="mailto:kareljane04@gmail.com" class="social-icon">EM</a> 
+</div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kharylle Cabalida. Student & Creator.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Works</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('active');
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }, index * 100);
+      });
+
+      setTimeout(() => {
+        document.querySelectorAll('.bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.percent;
+        });
+      }, 500);
+    });
+
+    const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector('.close-btn');
+
+// Open Modal
+document.querySelectorAll('.project-thumb img, .view-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    const card = el.closest('.project-card');
+    lbImg.src = card.querySelector('img').src;
+    
+    lb.classList.add('active'); // Trigger CSS transition
+    document.body.style.overflow = "hidden"; // Stop page scroll
+  });
+});
+
+// Close Modal Function
+const closeModal = () => {
+  lb.classList.remove('active');
+  document.body.style.overflow = "auto";
+};
+
+closeBtn.onclick = closeModal;
+
+// Close on clicking the dark background
+lb.onclick = (e) => {
+  if (e.target !== lbImg) {
+    closeModal();
+  }
+};
+
+// Also close on 'Escape' key
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") closeModal();
+});
+  </script>
+</body>
+</html>

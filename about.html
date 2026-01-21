@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Kharylle Cabalida</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about-style.css">
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="bg-blobs">
+    <div class="blob s1"></div>
+    <div class="blob s2"></div>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo" onclick="window.location.href='portfolio.html';" style="cursor: pointer;">
+    KAREL<span>.</span>
+    </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/me.jpg" alt="Kharylle Cabalida">
+      </div>
+      
+      <div class="about-text">
+        <h1 class="gradient-text reveal">The Journey of a Growing Creator</h1>
+        <p class="reveal">
+            Currently, I am <b>pursuing my studies</b> while deep-diving into the world of digital creation. I believe that being a student is my greatest strength—it means I am constantly learning, adapting, and experimenting with the latest technologies.
+        </p>
+        <p class="reveal">
+            While I balance my academic life, I dedicate my time to mastering <b>Full-Stack Development</b> and <b>Visual Communication</b>. I don't just follow tutorials; I build real-world solutions that bridge the gap between complex code and user-centric design.
+        </p>
+        
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <h3>4th</h3>
+            <p>Year Student</p>
+          </div>
+          <div class="stat-card">
+            <h3>100%</h3>
+            <p>Dedication</p>
+          </div>
+          <div class="stat-card">
+            <h3>∞</h3>
+            <p>Curiosity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="learning-path">
+      <h2 class="reveal">Currently Mastering</h2>
+      <div class="skills-flex reveal">
+        <span class="skill-tag">Advanced React</span>
+        <span class="skill-tag">Next.js 14+</span>
+        <span class="skill-tag">UI/UX Psychology</span>
+        <span class="skill-tag">Backend Logic</span>
+        <span class="skill-tag">Brand Strategy</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Figma Prototyping</span>
+        <span class="skill-tag">TypeScript</span>
+      </div>
+    </section>
+  </main>
+
+   <footer class="main-footer reveal">
+ <div class="footer-content">
+    <div class="footer-logo">KAREL<span>.</span></div>
+    <p>Let's build something amazing together.</p>
+    
+   <div class="social-links">
+  <a href="https://www.facebook.com/khai.jane" target="_blank" class="social-icon">FB</a> 
+  
+  <a href="https://www.instagram.com/ryll_khv" target="_blank" class="social-icon">IG</a> 
+  
+  <a href="https://m.me/khai.jane" target="_blank" class="social-icon">MS</a> 
+  
+  <a href="mailto:kareljane04@gmail.com" class="social-icon">EM</a> 
+</div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kharylle Cabalida. Student & Creator.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Works</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Smooth reveal animation on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('active');
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }, index * 150);
+      });
+    });
+  </script>
+</body>
+</html>
